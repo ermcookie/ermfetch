@@ -967,7 +967,7 @@ get_os() {
 }
 
 get_distro() {
-    [[ $distro ]] && return
+    [[ $distro  ]] && return
 
     case $os in
         Linux|BSD|MINIX)
@@ -1226,7 +1226,7 @@ get_distro() {
     esac
 
     [[ $os_arch == on ]] && \
-        distro+=" $machine_arch"
+        distro+=" $machine_arch btw"
 
     [[ ${ascii_distro:-auto} == auto ]] && \
         ascii_distro=$(trim "$distro")
@@ -1252,7 +1252,7 @@ get_model() {
                 model=$(< /sys/firmware/devicetree/base/model)
 
             elif [[ -f /tmp/sysinfo/model ]]; then
-                model=$(< /tmp/sysinfo/model)
+                model=$(< /tmp/sysinfo/model)z
             fi
         ;;
 
