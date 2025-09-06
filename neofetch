@@ -1121,7 +1121,7 @@ get_distro() {
                     distro=${distro## on }
             fi
 
-            distro=$(trim_quotes "$distro")
+            distro=$(trim_quotes "$distro btw")
             distro=${distro/NAME=}
 
             # Get Ubuntu flavor.
@@ -1226,7 +1226,7 @@ get_distro() {
     esac
 
     [[ $os_arch == on ]] && \
-        distro+=" $machine_arch btw"
+        distro+=" $machine_arch"
 
     [[ ${ascii_distro:-auto} == auto ]] && \
         ascii_distro=$(trim "$distro")
