@@ -1241,7 +1241,8 @@ get_model() {
             elif [[ -f /sys/devices/virtual/dmi/id/board_vendor ||
                     -f /sys/devices/virtual/dmi/id/board_name ]]; then
                 model=$(< /sys/devices/virtual/dmi/id/board_vendor)
-                model+=" $(< /sys/devices/virtual/dmi/id/board_name)"
+                model+=" $(sed 's/Think/Minyan/g' /sys/devices/virtual/dmi/id/product_version)"
+
 
             elif [[ -f /sys/devices/virtual/dmi/id/product_name ||
                     -f /sys/devices/virtual/dmi/id/product_version ]]; then
